@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet/less" type="text/css" href="/static/style.less">
+    <script src="/static/less.js" type="text/javascript"></script>
+    <title>Top Ranked Players</title>
+</head>
+<body>
+{{ player.name }}
+<br/><br/>
+
+
+{% if matches %}
+    <div id="recent_games">
+    {% for match in matches %}
+        <div class="recent_game">
+            <span class="queue_type">{{ match.queue }}</span>
+            <span class="win_status" id="{{ match.win_status|lower }}">{{ match.win_status }}</span>
+            <table class="game_stats">
+                <tr>
+                    <td class="label">Level:</td><td>{{ match.level }}</td>
+                    <td class="label">Gold:</td><td>{{ match.gold }}</td>
+                    <td class="label">God:</td><td>{{ match.god }}</td>
+                </tr>
+                <tr>
+                    <td class="label">Kills:</td><td>{{ match.kills }}</td>
+                    <td class="label">Deaths:</td><td>{{ match.deaths }}</td>
+                    <td class="label">Assists:</td><td>{{ match.assists }}</td>
+                </tr>
+                <tr>
+                    <td class="label">Date:</td><td>{{ match.match_time }}</td>
+                    <td class="label">Length:</td><td>{{ match.minutes }}</td>
+                    <td class="label">Assists:</td><td>{{ match.assists }}</td>
+                </tr>
+            </table>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+</body>
+</html>

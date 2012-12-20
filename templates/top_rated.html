@@ -1,0 +1,40 @@
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet/less" type="text/css" href="/static/style.less">
+    <script src="/static/less.js" type="text/javascript"></script>
+    <title>Top Ranked Players</title>
+</head>
+<body>
+{% if player_sort_ranked %}
+    <div id="ranked_div">
+    <h1>Top 50 Ranked Players</h1>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Rank</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for player in player_sort_ranked %}
+            <tr>
+                <td><a href="/player/?name={{ player.name }}">{{ player.name }}</a></td>
+                <td>{{ player.rank_stat }}</td>
+                <td>{{ player.wins }}</td>
+                <td>{{ player.losses }}</td>
+                <td>{{ player.updated|naturaltime }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% else %}
+    <p>No players are available.</p>
+{% endif %}
+</body>
+</html>

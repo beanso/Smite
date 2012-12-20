@@ -1,0 +1,87 @@
+body {
+  background-color: #001A66;
+}
+
+#ranked_div {
+  margin: 0 auto;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    color: #E0A800;
+  }
+
+  table {
+    margin: 0 auto;
+    background-color: #A37A00;
+  }
+
+  td {
+    padding: 5px 10px 5px 10px;
+    border-bottom: 1px solid black;
+  }
+
+  th {
+    border-bottom: 2px solid black;
+    padding: 10px;
+  }
+
+  tbody tr:hover {
+    background-color: #E0A800;
+  }
+}
+
+#recent_games {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #A37A00;
+    padding: 10px;
+
+    .recent_game {
+        width: 75%;
+        margin: 0 auto;
+        border: 1px black solid;
+        padding: 10px;
+        margin-bottom: 5px;
+
+        .win_status {
+            float: right;
+            font-weight: bold;
+        }
+
+        #win.win_status {
+            color: green;
+        }
+
+        #loss.win_status {
+            color: red;
+        }
+
+        .game_stats {
+            margin: 0 auto;
+        }
+
+        table {
+            width: 80%;
+            background-color: #C59200;
+            border-collapse: collapse;
+            border-style: hidden;
+
+            td {
+                padding: 5px;
+                text-align: right;
+                width: 25%;
+                border-width: 1px;
+                border-style: inset;
+                border-color: black;
+            }
+            td.label {
+                font-weight: bold;
+                text-align: left;
+                width: 5%;
+                border-right: hidden;
+            }
+        }
+    }
+}
+
